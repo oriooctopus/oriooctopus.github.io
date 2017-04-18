@@ -5,7 +5,7 @@ var ROOM;
 
 $(document).ready(function (){
   app.init();
-  setInterval(app.fetch, 60000);
+  setInterval(app.fetch, 3000);
 
   $('#roomSelect').on('change', function() {
     if (this.value === 'new room') {
@@ -136,9 +136,9 @@ app.renderMessage = function(message, onFetch) {
   $chat.append($msg);
 
   if (onFetch !== undefined) {
-    $('#chats').prepend($chat);
-  } else {
     $('#chats').append($chat);
+  } else {
+    $('#chats').prepend($chat);
   }
   audio.play();
 } 
