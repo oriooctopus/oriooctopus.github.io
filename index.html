@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>chatterbox</title>
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- dependencies -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script>
+      // YOU DO NOT NEED TO EDIT THIS CODE
+      if (!/(&|\?)username=/.test(window.location.search)) {
+        var newSearch = window.location.search;
+        if (newSearch !== '' & newSearch !== '?') {
+          newSearch += '&';
+        }
+        newSearch += 'username=' + (prompt('What is your name?') || 'anonymous');
+        window.location.search = newSearch;
+      }
+    </script>
+    <!-- your scripts -->
+    <!-- <script src="env/config.js"></script> -->
+    <script src="scripts/app.js"></script>
+  </head>
+  <body>
+    <div id="main">
+      <h1>chatterbox</h1>
+      
+    </div>
+    <div>
+      Room:
+      <select id="roomSelect">
+        <option value="lobby">lobby</option>
+        <option value="new room">new room</option>
+        <!-- chat rooms selection -->
+      </select>
+    </div>
+    <form id="chatbox">
+      <input type="text" name="message">
+      <button id="button" type="submit">Submit</button>
+    </form>
+      <!-- user input -->
+    <div id="chats">
+      
+    </div>
+  </body>
+  <audio id="tone" src="tone.mp3"></audio>
+</html>
